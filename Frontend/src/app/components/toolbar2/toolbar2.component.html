@@ -1,0 +1,19 @@
+<mat-toolbar color="warn">
+    <button mat-icon-button class="example-icon" disabled aria-label="Example icon-button with menu icon">
+      <mat-icon>coffee</mat-icon>
+    </button> 
+    <span>Inventario a la Antigua</span>
+    <span class="example-spacer"></span>
+    <button mat-button class="example-icon favorite-icon" (click)="list()">
+        Revisar articulos
+      <mat-icon>view_list</mat-icon>
+    </button>
+    <button mat-button class="example-icon" (click)="ord()">
+      Generar orden
+      <mat-icon>reorder</mat-icon>
+    </button>
+    <button mat-button class="example-icon" (click)="salir()">
+      Logout
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
