@@ -35,8 +35,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "641e4f7c-e2d0-491c-ab70-29152d25d67e",
             "zIndex": -1,
+            "id": "641e4f7c-e2d0-491c-ab70-29152d25d67e",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Cliente\n",
@@ -47,13 +47,6 @@
               "containedElements": [
                 "fa7fd0a6-a8aa-4ec6-a8c8-eb627986d14e"
               ]
-            },
-            "tools": {
-              "items": [
-                "boundary",
-                "button-remove"
-              ],
-              "name": null
             }
           },
           {
@@ -70,13 +63,14 @@
                 "text": "Cliente"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 0,
             "ports": {
               "groups": {
                 "top": {
@@ -160,7 +154,6 @@
               ]
             },
             "id": "fa7fd0a6-a8aa-4ec6-a8c8-eb627986d14e",
-            "zIndex": 0,
             "data": {
               "type": "tm.Actor",
               "name": "Cliente",
@@ -168,9 +161,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "e7189b3f-b83f-41ff-b364-05f09984885c",
+                  "title": "Robo de credenciales",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Robo de contraseñas a los usaurios",
+                  "mitigation": "MFA",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 3,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           }
         ]
@@ -178,6 +189,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "",
-    "threatTop": 0
+    "threatTop": 3
   }
 }
