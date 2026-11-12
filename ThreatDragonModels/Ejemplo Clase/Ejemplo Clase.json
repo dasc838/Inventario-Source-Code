@@ -35,8 +35,8 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "5345261e-00ce-460c-8b73-af87e6bcb31f",
             "zIndex": -1,
+            "id": "5345261e-00ce-460c-8b73-af87e6bcb31f",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "Internet",
@@ -65,15 +65,17 @@
             },
             "visible": true,
             "shape": "trust-boundary-box",
-            "id": "a2623c01-b5c4-41bb-950e-e0debf94b910",
             "zIndex": -1,
+            "id": "a2623c01-b5c4-41bb-950e-e0debf94b910",
             "data": {
               "type": "tm.BoundaryBox",
               "name": "DMZ",
               "description": "",
               "isTrustBoundary": true,
               "hasOpenThreats": false,
-              "crossingFlows": [],
+              "crossingFlows": [
+                "094077d7-5973-4123-9ab2-9d9dd097aefd"
+              ],
               "containedElements": [
                 "2dbae7e5-f538-4400-810a-0d50ca599db8"
               ]
@@ -93,13 +95,14 @@
                 "text": "Cliente"
               },
               "body": {
-                "stroke": "#333333",
-                "strokeWidth": 1.5,
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "strokeDasharray": null
               }
             },
             "visible": true,
             "shape": "actor",
+            "zIndex": 0,
             "ports": {
               "groups": {
                 "top": {
@@ -183,7 +186,6 @@
               ]
             },
             "id": "a7eb2695-f10c-4cb9-ac96-761b76502617",
-            "zIndex": 0,
             "data": {
               "type": "tm.Actor",
               "name": "Cliente",
@@ -191,9 +193,27 @@
               "isTrustBoundary": false,
               "outOfScope": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "providesAuthentication": false,
-              "threats": []
+              "threats": [
+                {
+                  "id": "955c7210-7d6a-49a5-b07f-000d8ed4bc4d",
+                  "title": "Robo de credenciales",
+                  "status": "Open",
+                  "severity": "Medium",
+                  "type": "Spoofing",
+                  "description": "Robo de credenciales no encriptadas",
+                  "mitigation": "MFA",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 1,
+                  "score": ""
+                }
+              ],
+              "threatFrequency": {
+                "spoofing": 1,
+                "repudiation": 0
+              }
             }
           },
           {
@@ -217,6 +237,7 @@
             },
             "visible": true,
             "shape": "process",
+            "zIndex": 1,
             "ports": {
               "groups": {
                 "top": {
@@ -300,7 +321,6 @@
               ]
             },
             "id": "2dbae7e5-f538-4400-810a-0d50ca599db8",
-            "zIndex": 1,
             "data": {
               "type": "tm.Process",
               "name": "Front",
@@ -320,7 +340,8 @@
             "shape": "flow",
             "attrs": {
               "line": {
-                "stroke": "#333333",
+                "stroke": "red",
+                "strokeWidth": 2.5,
                 "targetMarker": {
                   "name": "block"
                 },
@@ -341,13 +362,34 @@
               "outOfScope": false,
               "isTrustBoundary": false,
               "reasonOutOfScope": "",
-              "hasOpenThreats": false,
+              "hasOpenThreats": true,
               "isBidirectional": false,
               "isEncrypted": false,
               "isPublicNetwork": false,
               "protocol": "",
-              "threats": [],
-              "trustBoundaryIds": []
+              "threats": [
+                {
+                  "id": "93068c0d-5604-48ad-93a5-88ec2645bf0b",
+                  "title": "Robo de información en tráfico",
+                  "status": "Open",
+                  "severity": "High",
+                  "type": "Information disclosure",
+                  "description": "Comunicación no enciptada",
+                  "mitigation": "Usar cifrado asimetrico para comunicación",
+                  "modelType": "STRIDE",
+                  "new": false,
+                  "number": 2,
+                  "score": ""
+                }
+              ],
+              "trustBoundaryIds": [
+                "a2623c01-b5c4-41bb-950e-e0debf94b910"
+              ],
+              "threatFrequency": {
+                "tampering": 0,
+                "informationDisclosure": 1,
+                "denialOfService": 0
+              }
             },
             "labels": [
               "HTTPS"
@@ -358,9 +400,15 @@
               "y": 309
             },
             "target": {
-              "x": 427,
-              "y": 409
-            }
+              "cell": "2dbae7e5-f538-4400-810a-0d50ca599db8",
+              "port": "5bf59d60-a610-4544-8c7d-3f5523d569d3"
+            },
+            "vertices": [
+              {
+                "x": 390,
+                "y": 409
+              }
+            ]
           }
         ],
         "description": "Modelado beta"
@@ -368,6 +416,6 @@
     ],
     "diagramTop": 1,
     "reviewer": "Lester",
-    "threatTop": 0
+    "threatTop": 2
   }
 }
