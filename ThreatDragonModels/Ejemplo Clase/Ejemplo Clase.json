@@ -1,0 +1,29 @@
+{
+  "version": "2.6.2",
+  "release_version": "1.0",
+  "released_at": "2026-11-11",
+  "summary": {
+    "title": "Ejemplo Clase",
+    "owner": "Daniel",
+    "description": "",
+    "id": 0
+  },
+  "detail": {
+    "contributors": [],
+    "diagrams": [
+      {
+        "id": 0,
+        "title": "Modelado 1",
+        "diagramType": "STRIDE",
+        "placeholder": "New STRIDE diagram description",
+        "thumbnail": "./public/content/images/thumbnail.stride.jpg",
+        "version": "2.6.2",
+        "cells": [],
+        "description": "Modelado beta"
+      }
+    ],
+    "diagramTop": 1,
+    "reviewer": "Lester",
+    "threatTop": 0
+  }
+}
